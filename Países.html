@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Verificador de Brasileiros</h1>
+    Digite seu País <input type="text" name ="txtnac" id ="txtnac">
+    <input type="button" value="Analisar" onclick="verificarNacionalidade()">
+    <div id="res">
+
+        </div>
+        <style>
+            body {
+                background-color: #caafe9;
+                font-family: Arial, sans-serif;
+                text-align: center;
+                margin-top: 50px;
+            }
+            h1 {
+                color: #3d3b3b;
+            }
+            input[type="text"] {
+                width: 200px;
+                padding: 5px;
+                margin-right: 10px;
+            }
+            input[type="button"] {
+                padding: 5px 10px;
+                background-color: #513fb9;
+                color: rgb(212, 106, 106);
+                border: none;
+                cursor: pointer;
+            }
+            input[type="button"]:hover {
+                background-color: #3b55ca;
+            }
+            div#res {
+                margin-top: 20px;
+                font-size: 18px;
+            }
+        </style>
+        <script>
+            function verificarNacionalidade() {
+            var txtn = window.document.querySelector('input#txtnac');
+            var res = window.document.querySelector('div#res')
+            var nacionalidade = txtn.value.toLowerCase();
+            res.innerHTML = (`<p>Seu país de origem é <strong>${nacionalidade}</strong>!</p>`)
+        
+            if (nacionalidade == 'brasil') {
+                res.innerHTML += `<p>Você é <strong>Brasileiro!</strong></p>`;
+            } else {
+                res.innerHTML += `<p>Você é <strong>Estrangeiro!</strong></p>`;
+            }
+        }
+        </script>
+    </div>
+    
+</body>
+</html>
